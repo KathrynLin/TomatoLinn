@@ -1,0 +1,522 @@
+/* General styles */
+body {
+    font-family: "Sedan",Arial,Helvetica,sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* This ensures padding doesn't affect overall widths */
+}
+
+.index_body {
+    background-image: linear-gradient(to bottom, #b5d7e1 35%, #f7f6ea 75%);
+  }
+.resume_body {
+    background-color:#e6effb;
+}
+
+@media screen and (min-width: 750px) {
+    .index_body {
+        background-image: linear-gradient(to right, #b5d7e1 35%, #e6effb 75%);
+    }
+
+}
+  
+/* Skip to Main Content */
+a.skip {
+    position: absolute;
+    left: -10000px;
+    padding: 14px 16px;
+    overflow: hidden;
+}
+
+.skip:hover {
+    text-decoration: underline;
+}
+
+.skip:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+}
+
+  /* Navigation Bar */
+
+  nav ul {
+    display: grid;
+   
+    background-color: #b5d7e1;
+    overflow: hidden;
+    grid-template-columns: 1fr;
+    margin: 10px;
+    height: auto; 
+}
+
+nav ul li {
+    text-align: center; 
+    width: 100%; 
+    float: left;
+}
+
+nav ul li a {
+    text-align: center;
+    display: block;
+    padding: 20px 16px; 
+    font-size: 1.1rem; 
+    text-decoration: none;
+    color:rgb(5, 57, 45);
+}
+
+@media screen and (min-width: 750px) {
+        
+    nav ul{
+        height: 80%;
+        margin: 10px;
+        grid-template-columns: auto auto auto auto;
+        justify-content: end;
+        gap: 1%;
+    }
+
+    nav ul li{
+        text-align: left;
+    }
+
+    nav ul li a{
+        padding: 14px 16px;
+    }
+
+}
+
+
+nav ul li a:hover {
+    background-color: rgb(255, 246, 207);
+    color: rgb(5, 57, 45);
+    border-radius: 30px;
+    font-style: italic;
+}
+
+nav .active a {
+    background-color: rgb(12, 86, 69); 
+    border-radius: 30px;
+    font-style: italic;
+    color:#dbc9da;
+}
+
+/* Style for the main content area */
+  #main-content-index {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; 
+    padding: 50px;
+    min-height: 100vh;
+    /* background: #f8d0c0; */
+  }
+  
+  /* Profile section containing the image and the name */
+  .profile-section {
+    grid-area: 1;
+    display: grid;
+    grid-template-areas: 
+      "image"
+      "name";
+    background: #f7f6ea;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .profile-image {
+    grid-area: image;
+    width: 70%; 
+    height: 90%; 
+    border-radius: 50%;
+    margin: auto; 
+  }
+  
+  .profile-section h1 {
+    grid-area: name;
+    margin-top: 20px; 
+    font-size: 2em;
+    text-align: center;
+    background-color: #f7f6ea;
+    font-weight: bolder;
+  }
+  
+  .divider {
+    height: 4px;
+    width: 60px; 
+    background-color: #170327b2; 
+    margin: 20px auto 20px; 
+    }
+
+  .profile-section p {
+    background-color: #f7f6ea;
+    font-size: 1.2em;
+    margin-top: 0;
+    text-align: center;
+  }
+  .profile-bio {
+    grid-row: 2;
+    height: fit-content;
+    margin-left: 10%;
+    margin-right: 10%;
+    
+  }
+  .profile-bio p {
+    font-size: 1.2em;
+    line-height: 1.5;
+    text-align: center;
+  }
+  .profile-button {
+    margin-top:0;
+    margin-bottom: 5%;
+    margin-left: 5%;
+    /* background-color: #faf5f3; */
+    padding: 20px;
+    text-align: center;
+    width: 90%;
+    /* border-radius: 10px; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .profile-button h2 {
+    padding-bottom: 5%;
+    font-size: 1.6em;
+    font-weight: bold;
+  }
+
+/* main content for desktop */
+@media screen and (min-width: 750px) {
+#main-content-index {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; 
+    padding: 50px;
+    min-height: 100vh;
+    /* background: #f8d0c0; */
+    }
+    
+    /* Profile section containing the image and the name */
+    .profile-section {
+    grid-area: 1/1/span 2/span 1;
+    display: grid;
+    grid-template-areas: 
+        "image"
+        "name";
+    background: #f7f6ea;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-left: 40%;
+    height: 70%;
+    width:70%;
+    text-align: center;
+    }
+    
+    .profile-image {
+    grid-area: image;
+    width: 70%; 
+    height: 90%; 
+    border-radius: 50%;
+    margin: auto; 
+    }
+    
+    .profile-section h1 {
+    grid-area: name;
+    margin-top: 20px; 
+    font-size: 2em;
+    text-align: center;
+    background-color: #f7f6ea;
+    font-weight: bolder;
+    }
+    
+    .divider {
+    height: 4px;
+    width: 60px; 
+    background-color: #170327b2; 
+    margin: 10px auto 10px; 
+    }
+
+    .profile-section p {
+    background-color: #f7f6ea;
+    font-size: 1.2em;
+    margin-top: 0;
+    }
+    .profile-bio {
+    grid-area: 1 / 2 / span 2 / span 1;
+    height: fit-content;
+    margin-left: 10%;
+    margin-right: 10%;
+    
+    }
+    .profile-bio p {
+    font-size: 1.2em;
+    line-height: 1.5;
+    text-align: left;
+    margin-left: 5%;
+    }
+    .profile-button {
+    margin-top:0;
+    margin-bottom: 5%;
+    margin-left: 5%;
+    /* background-color: #faf5f3; */
+    padding: 20px;
+    text-align: center;
+    width: 80%;
+    /* border-radius: 10px; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .profile-button h2 {
+    padding-bottom: 5%;
+    font-size: 1.6em;
+    font-weight: bold;
+    }
+}
+
+  /* Buttons */
+  .button {
+    padding: 10px 15px;
+    margin: 3%;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button-blue {
+    background-color: rgb(12, 86, 69);
+    color: white;
+  }
+  
+  .button-blue:hover {
+    background-color: #170327b2;
+  }
+  
+  .button-light {
+    /* background-color: #b5d7e1; */
+    background-color: #dbc9da;
+    color: #170327b2;
+    border: 1px solid #170327b2;
+  }
+  
+  .button-light:hover {
+    background-color: rgba(64, 112, 102, 0.968);
+    color:white;
+  }
+  
+
+/* footer */
+footer {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgba(12, 86, 69, 0.864);
+    color: rgb(255, 246, 207);
+    padding: 20px;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+
+
+/* resume page */
+/* color: #fa9c7d; */
+.resume-wrapper {
+    background-color: #feece7; /* Pink background for the wrapper */
+    width: 80%; /* Or any width you prefer */
+    margin: 0 auto; /* Center the wrapper */
+    border-radius: 10px; /* Rounded corners for the wrapper */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds shadow for depth */
+    padding: 20px; /* Padding inside the wrapper */
+    margin-top: 20px; /* Space from the top of the page */
+    position: relative; /* For absolute positioning of the timeline icon */
+}
+
+.profile-card {
+    text-align: center;
+    padding: 2em;
+    border-radius: 10px;
+    width: 50%;
+    margin: 0 auto;
+}
+.profile-card img {
+    width: 40%;
+    height: fit-content;
+    border-radius: 50%;
+    border: 3px solid #ffffff; /* White border around the image */
+    /* position: absolute; */
+
+}
+.profile-card h1 {
+    font-size: 2em;
+    margin-bottom: 1%;
+    margin-top: 1%;
+}
+.profile-card p {
+    font-size: 1.1em;
+    line-height: 1.5;
+    color: #170327b2;
+}
+
+
+/* Timeline Styles */
+.timeline {
+    position: relative;
+    padding: 2em;
+  }
+  
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 0.3%; 
+    background: #b5d7e1;
+    z-index: 0;
+  }
+  
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    margin-bottom: 4em; 
+    gap: 1em;
+    align-items: center;
+  }
+  
+  .timeline-item .timeline-icon {
+    grid-column: 2/3;
+    grid-row: 1;
+    justify-content: center;
+    width: 100%;
+    height:100%;
+    margin-left: 50%;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    cursor: pointer;
+  }
+  .timeline-icon:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s;
+  }
+  .timeline-item .timeline-header-1 {
+    font-size: 1.8em;
+    font-weight: bold;
+    grid-column: 2/3;
+    margin-left: 100%;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+  .timeline-item .timeline-header {
+    margin-left: 30%;
+    width: 100%;
+  }
+  .timeline-item .timeline-header h3 {
+    font-size: 1.2em;
+    margin-bottom: 0;
+  }
+  .timeline-img {
+    width: 100%;
+    height: 100%;
+    margin-left: 50%;
+    grid-column: 2/span 1;
+    grid-row: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+  .timeline-img img {
+    width: 50%;
+    border-radius: 50%;
+  }
+  .timeline-item .timeline-icon img {
+    width: 100%;
+  }
+  
+  .timeline-item .timeline-content {
+    grid-column: 3/4;
+    grid-row: 2;
+    padding: 1em;
+    border-radius: 4px;
+    background: #ebdeea;
+    margin-left: 2em;
+    position: relative;
+    
+  }
+  .timeline-content {
+    visibility: hidden; /* Hide content */
+    opacity: 0; /* Make content transparent */
+    height: 0; /* Collapse content area */
+    overflow: hidden; /* Prevent content from taking up space */
+    transition: opacity 0.5s, height 0.5s, visibility 0.5s; /* Animate the visibility and height */
+}
+
+  .timeline-content.active {
+    visibility: visible; /* Show content */
+    opacity: 1; /* Make content opaque */
+    height: auto; /* Expand to fit content */
+}
+
+  .timeline-item .timeline-content h4{
+    font-size: 1.2em;
+    margin-bottom: 0;
+  }
+  .timeline-item .timeline-content ul {
+    padding-left: 1em;
+    list-style: none;
+
+  }
+  .timeline-item .timeline-content p {
+    font-size: 1.2em;
+    line-height: 1.5;
+    font-weight: bold;
+  }
+  .timeline-item .timeline-header {
+    grid-column: 1 / 2;
+  }
+  
+  .hide {
+    visibility: hidden;
+    width: 120px;
+    background-color: #ebdeea;
+    color: #170327b2;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    /* bottom: 125%;
+    left: 50%;
+    margin-left: -60px; */
+    top: 50%; /* Position the top of the tooltip to the center of the icon */
+    left: calc(100% + 10px); /* Offset the tooltip to the right of the icon */
+    transform: translateY(-50%); /* Center the tooltip vertically relative to the icon */
+    margin-left: 0; 
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .timeline-icon .hide::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%; 
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #170327b2 transparent transparent;
+  }
+  .timeline-icon:hover .hide {
+    visibility: visible;
+    opacity: 1;
+  }
