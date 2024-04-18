@@ -1,26 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sedan:ital@0;1&display=swap" rel="stylesheet">
+    <title>Fangqing's Website</title>
 
-  <!-- Contact Section -->
-  <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
-    <h2 class="w3-text-light-grey">Contact Me</h2>
-    <hr style="width:200px" class="w3-opacity">
+    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+    <script type="text/javascript">
+      (function(){
+          emailjs.init("TqcSrdSl_C9Vt3zw2"); 
+      })();
+    </script>
 
-    <div class="w3-section">
-      <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Chicago, US</p>
-      <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +00 151515</p>
-      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: mail@mail.com</p>
-    </div><br>
-    <p>Let's get in touch. Send me a message:</p>
+</head>
+<body class="index_body">
+    <header>
+        <a href = "#main-content" class="skip">Skip to Main Content</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">ABOUT ME</a></li>
+                <li><a href = "resume.html">RESUME</a></li>
+                <li><a href = "projects.html">PROJECTS</a></li>
+                <li class="active"><a href = "contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+        
 
-    <form action="/action_page.php" target="_blank">
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="Message"></p>
-      <p>
-        <button class="w3-button w3-light-grey w3-padding-large" type="submit">
-          <i class="fa fa-paper-plane"></i> SEND MESSAGE
-        </button>
-      </p>
-    </form>
-  <!-- End Contact Section -->
-  </div>
+    </header>
+    <main id="main-content">
+    
+      <div class="contact-container">
+        <h2>Contact Me</h2>
+        <p>Michigan, US</p>
+        <p>Phone: +1 7345839693</p>
+        <p>Email: tomatolinn@gmail.com</p>
+        
+        <form id="contact-form">
+            <p>Let's get in touch. Send me a message:</p>
+            <input type="text" id="name" name="name" placeholder="Name">
+            <input type="email" id="email" name="email" placeholder="Email">
+            <input type="text" id="subject" name="subject" placeholder="Subject">
+            <textarea id="message" name="message" placeholder="Message"></textarea>
+            <button type="submit">SEND MESSAGE</button>
+        </form>
+    </div>
+    
+
+    </main>
+    
+    <footer>
+        <p>Fangqing Lin &copy; 2024</p>
+    </footer>
+
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+          event.preventDefault();
+      
+          emailjs.sendForm('service_do50z4y', 'template_hz7eucp', this)
+            .then(function() {
+              console.log('SUCCESS!');
+              alert('Your message has been sent!');
+            }, function(error) {
+              console.log('FAILED...', error);
+              alert('Failed to send the message, please try again.');
+            });
+        });
+      });
+      </script>      
+   
+
+</body>
+</html>

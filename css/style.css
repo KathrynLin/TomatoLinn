@@ -520,3 +520,60 @@ footer {
     visibility: visible;
     opacity: 1;
   }
+
+
+
+  /* contact page */
+
+.contact-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contact-container h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.contact-container p {
+  color: #666;
+  line-height: 1.6;
+}
+
+#contact-form p {
+  margin-top: 20px;
+}
+
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box; /* Include padding in the element's total width and height */
+}
+
+#contact-form textarea {
+  height: 150px;
+}
+
+#contact-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #5D6D7E;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#contact-form button:hover {
+  background-color: #4A5A6B;
+}
