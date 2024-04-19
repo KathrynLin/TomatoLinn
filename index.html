@@ -46,7 +46,24 @@
 
         <p>I am a first-year Master's student in the Big Data Analytics track of School of Information at University of Michigan, Ann Arbor. I hold a Bachelor's degree in Electrical and Computer Engineering from Shanghai Jiao Tong University.</p>
         <br>
-        <p>I keep one of the cutest cat in the world, and his name is little ghost ^-^. I like piano, painting, Latin dancing, skiing and diving.</p>
+        <div class="guigui">
+            <p>I keep one of the cutest cat in the world, and his name is <span id="cat-name" class="clickable">little ghost ^-^</span>.</p>
+        </div>
+            <div id="cat-pic-modal" class="modal">
+                <span class="close">&times;</span>
+                <div class="modal-content">
+                <img class="cat-slides" src="images/guigui.jpg"  alt="little ghost the cat">
+                <img class="cat-slides" src="images/guigui1.jpg" hidden alt="little ghost the cat">
+                <img class="cat-slides" src="images/guigui2.jpg" hidden alt="little ghost the cat">
+                <img class="cat-slides" src="images/guigui3.jpg" hidden alt="little ghost the cat">
+                <img class="cat-slides" src="images/guigui5.jpg" hidden alt="little ghost the cat">
+                <img class="cat-slides" src="images/guigui6.jpg" hidden alt="little ghost the cat">
+                <img class="cat-slides" src="images/guigui7.jpg" hidden alt="little ghost the cat">
+                </div>
+                <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                <a class="next" onclick="changeSlide(1)">&#10095;</a>
+            </div>
+            <p>I like piano, painting, Latin dancing, skiing and diving.</p>
         <br>
         <p>I am currently seeking internship opportunities as a Data Analyst or Data Scientist!</p>
       </div>
@@ -59,7 +76,65 @@
         <p>Fangqing Lin &copy; 2024</p>
     </footer>
 
-   
+    <script>
+        // Get the modal element
+        var modal = document.getElementById("cat-pic-modal");
+        
+        // Get the element that opens the modal
+        var catName = document.getElementById("cat-name");
+        
+        // Get the <span> element that closes the modal
+        var closeBtn = document.getElementsByClassName("close")[0];
+        
+        // When the user clicks on the cat's name, open the modal 
+        catName.onclick = function() {
+          modal.style.display = "block";
+        }
+        
+        // When the user clicks on <span> (x), close the modal
+        closeBtn.onclick = function() {
+          modal.style.display = "none";
+        }
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        
+        </script>
+        
+    <script>
+        // Open modal functionality as previously described
+        
+        // Initialize slide index
+        var slideIndex = 1;
+        showSlides(slideIndex);
+        
+        // Next/previous controls
+        function changeSlide(n) {
+          showSlides(slideIndex += n);
+        }
+        
+        // Thumbnail image controls (if you later add thumbnails)
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+          var i;
+          var slides = document.getElementsByClassName("cat-slides");
+          if (n > slides.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+          }
+          slides[slideIndex-1].style.display = "block";
+        }
+        </script>
+        
+        
 
 </body>
 </html>
