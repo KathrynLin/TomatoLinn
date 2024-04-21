@@ -633,7 +633,7 @@ footer {
 .timeline-item .timeline-content ul {
   padding-left: 0.8em;
   list-style: none;
-  font-size: 0.3em;
+  font-size: 0.6em;
 }
 .timeline-item .timeline-content p {
   font-size: 0.8em;
@@ -663,7 +663,7 @@ footer {
   width: 100%;
 }
 #experience-content p{
-  font-size: 0.3em;
+  font-size: 0.8em;
 }
 .timeline-item #experience-content {
   grid-row: 4;
@@ -753,7 +753,7 @@ footer {
     border-radius: 50%;
     border: 3px solid #ffffff; /* White border around the image */
     /* position: absolute; */
-
+    display: inline-block;
 }
 .profile-card h1 {
     font-size: 2em;
