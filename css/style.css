@@ -742,7 +742,7 @@ footer {
 }
 
 .video-icon video {
-  /* display: none; */
+  display: none;
   width: 100px; /* Adjust width as needed */
   height: auto; /* Maintain aspect ratio */
   border: 2px solid #b5d7e1;
