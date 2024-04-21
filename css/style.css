@@ -583,6 +583,7 @@ footer {
   grid-row: 1;
   text-align: center;
   /* width: 100%; */
+  z-index: 2;
 }
 .timeline-item .timeline-header h3 {
   font-size: 1em;
@@ -695,6 +696,7 @@ footer {
   text-align: center;
   font-size: 1em;
   font-style: italic;
+  z-index: 2;
 }
 .skill-icon {
   margin-left: 38%;
@@ -712,6 +714,7 @@ footer {
   padding: 10px 0;  /* Add padding for better visual spacing */
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
   border-radius: 10px;
+  z-index: 2;
 }
 .timeline-item .timeline-header-3 {
   grid-row: 1;
@@ -723,16 +726,19 @@ footer {
   padding: 10px 0;  /* Add padding for better visual spacing */
   box-shadow: 0px 4px 8px rgba(0,0,0, 0.1);  /* Subtle shadow for depth */
   border-radius: 10px;
+  z-index: 2;
 }
 .timeline-item .timeline-content-1 {
   grid-row: 3;
   text-align: center;
   font-size: 0.8em;
+  z-index: 2;
 }
 .timeline-item .timeline-content-2 {
   grid-row: 3;
   text-align: center;
   font-size: 0.8em;
+  z-index: 2;
 }
 
 .video-icon video {
@@ -745,6 +751,7 @@ footer {
 }
 
 .video-icon {
+  z-index: 2;
   display: flex;
   justify-content: center; /* Center horizontally in the parent */
   align-items: center; /* Center vertically */
