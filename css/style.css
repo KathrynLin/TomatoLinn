@@ -701,8 +701,11 @@ footer {
   height: 50%;
   z-index: 2;
 }
-.timeline-item .timeline-header-2 {
+.timeline-item .skill-icon {
   grid-row: 1;
+}
+.timeline-item .timeline-header-2 {
+  grid-row: 2;
   text-align: center;
   font-size: 1em;
   width: 100%;
@@ -714,7 +717,7 @@ footer {
   z-index: 2;
 }
 .timeline-item .timeline-header-3 {
-  grid-row: 1;
+  grid-row: 2;
   text-align: center;
   font-size: 1em;
   width: 100%;
