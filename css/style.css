@@ -530,8 +530,6 @@ footer {
   line-height: 1.5;
   color: #170327b2;
 }
-
-
 /* Timeline Styles */
 .timeline {
   position: relative;
@@ -642,7 +640,6 @@ footer {
   font-weight: bold;
 }
 
-
 .hide {
   visibility: hidden;
 }
@@ -748,6 +745,7 @@ footer {
   border-radius: 50%; /* Make it circular if that's desired */
   object-fit: cover; /* Ensure the video covers the area without being stretched */
   cursor: pointer; /* Indicate it's clickable */
+  z-index: 2;
 }
 
 .video-icon {
@@ -779,7 +777,7 @@ footer {
 }
 .profile-card img {
     width: 40%;
-    height: fit-content;
+    height: 60%;
     border-radius: 50%;
     border: 3px solid #ffffff; /* White border around the image */
     /* position: absolute; */
