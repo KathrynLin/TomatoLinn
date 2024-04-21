@@ -609,9 +609,7 @@ footer {
   padding: 1em;
   border-radius: 4px;
   background: #ebdeea;
-  margin-left: 2em;
   position: relative;
-  
 }
 .timeline-content {
   visibility: hidden; /* Hide content */
@@ -668,6 +666,8 @@ footer {
 }
 .timeline-item #experience-content {
   grid-row: 4;
+  text-align: center;
+  margin-left: 0;
 }
 #experience-content h4{
   text-align: center;
@@ -695,7 +695,36 @@ footer {
   font-size: 1em;
   font-style: italic;
 }
-
+.skill-icon {
+  margin-left: 38%;
+  width: 50%;
+  height: 50%;
+  z-index: 2;
+}
+.timeline-item .timeline-header-2 {
+  grid-row: 1;
+  text-align: center;
+  font-size: 1em;
+  width: 100%;
+  font-weight: bold;
+}
+.timeline-item .timeline-header-3 {
+  grid-row: 1;
+  text-align: center;
+  font-size: 1em;
+  width: 100%;
+  font-weight: bold;
+}
+.timeline-item .timeline-content-1 {
+  grid-row: 3;
+  text-align: center;
+  font-size: 0.8em;
+}
+.timeline-item .timeline-content-2 {
+  grid-row: 3;
+  text-align: center;
+  font-size: 0.8em;
+}
 
 /* Resume page for desktop */
 @media screen and (min-width: 750px) {
@@ -827,7 +856,6 @@ footer {
     background: #ebdeea;
     margin-left: 2em;
     position: relative;
-    
   }
   .timeline-content {
     visibility: hidden; 
@@ -947,7 +975,44 @@ footer {
   .timeline-item #experience-content {
     grid-row: 3;
     grid-column: 3/4;
+    margin-left: 2em;
   }
+  .timeline-item .skill-icon {
+    grid-column: 2/3;
+    margin-left: 80%;
+    width: 80%;
+    height: 50%;
+    z-index: 2;
+  }
+  
+  .timeline-item .timeline-header-2 {
+    grid-column: 1/2;
+    grid-row: 1;
+    margin-left: 50%;
+    font-size: 1.2em;
+    width: 100%;
+  }
+  .timeline-item .timeline-header-3 {
+    grid-column: 3/4;
+    grid-row: 1;
+    margin-left: 5%;
+    font-size: 1.2em;
+    width: 100%;
+  }
+  .timeline-item .timeline-content-1 {
+    grid-column: 3/4;
+    grid-row: 1;
+    margin-left: 20%;
+    font-size: 1em;
+  }
+  .timeline-item .timeline-content-2 {
+    grid-column: 1/2;
+    grid-row: 1;
+    margin-left: 30%;
+    width: 100%;
+    font-size: 1em;
+  }
+  
 }
 
 
