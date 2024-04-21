@@ -225,11 +225,47 @@ nav .active a {
 
   /* Style for clickable cat name */
   .clickable {
+    position: relative;
     color: rgb(12, 86, 69);
     cursor: pointer;
     text-decoration: underline;
     font-weight: bold;
   }
+  
+  .tooltip {
+    visibility: hidden;
+    width: 120px;
+    background-color: #ebdeea;
+    color: #170327b2;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 50%; /* Position the top of the tooltip to the center of the icon */
+    left: calc(100% + 10px); /* Offset the tooltip to the right of the icon */
+    transform: translateY(-50%); /* Center the tooltip vertically relative to the icon */
+    margin-left: 0; 
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 0.8em;
+}
+
+.tooltip::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%; 
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #170327b2 transparent transparent;
+  }
+
+.clickable:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
 
 
   .modal {
@@ -458,6 +494,212 @@ footer {
 /* resume page */
 /* color: #fa9c7d; */
 .resume-wrapper {
+  background-color: #feece7; /* Pink background for the wrapper */
+  width: 80%; /* Or any width you prefer */
+  margin: 0 auto; /* Center the wrapper */
+  border-radius: 10px; /* Rounded corners for the wrapper */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds shadow for depth */
+  padding: 20px; /* Padding inside the wrapper */
+  margin-top: 20px; /* Space from the top of the page */
+  position: relative; /* For absolute positioning of the timeline icon */
+}
+
+.profile-card {
+  text-align: center;
+  padding: 2em;
+  border-radius: 10px;
+  width: 70%;
+  margin: 0 auto;
+}
+.profile-card img {
+  width: 100%;
+  height: fit-content;
+  border-radius: 50%;
+  border: 3px solid #ffffff; /* White border around the image */
+  /* position: absolute; */
+
+}
+.profile-card h1 {
+  font-size: 1.5em;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+.profile-card p {
+  font-size: 1em;
+  line-height: 1.5;
+  color: #170327b2;
+}
+
+
+/* Timeline Styles */
+.timeline {
+  position: relative;
+  padding: 2em;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 0.3%; 
+  background: #b5d7e1;
+  z-index: 0;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: auto;
+  margin-bottom: 4em; 
+  gap: 1em;
+  align-items: center;
+}
+
+.timeline-item .timeline-icon {
+  grid-row: 2;
+  width: 100%;
+  height:60%;
+  background: #fff;
+  border-radius: 50%;
+  z-index: 2;
+  cursor: pointer;
+}
+.timeline-icon:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s;
+}
+.timeline-item .timeline-header-1 {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+.timeline-item .timeline-header {
+  grid-row: 1;
+  text-align: center;
+  /* width: 100%; */
+}
+.timeline-item .timeline-header h3 {
+  font-size: 1em;
+  margin-bottom: 0;
+}
+.timeline-img {
+  width: 100%;
+  height: 100%;
+  grid-row: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+.timeline-img img {
+  width: 50%;
+  border-radius: 50%;
+}
+.timeline-item .timeline-icon img {
+  width: 100%;
+}
+
+.timeline-item .timeline-content {
+  grid-row: 3;
+  padding: 1em;
+  border-radius: 4px;
+  background: #ebdeea;
+  margin-left: 2em;
+  position: relative;
+  
+}
+.timeline-content {
+  visibility: hidden; /* Hide content */
+  opacity: 0; /* Make content transparent */
+  height: 0; /* Collapse content area */
+  overflow: hidden; /* Prevent content from taking up space */
+  transition: opacity 0.5s, height 0.5s, visibility 0.5s; /* Animate the visibility and height */
+}
+
+.timeline-content.active {
+  visibility: visible; /* Show content */
+  opacity: 1; /* Make content opaque */
+  height: auto; /* Expand to fit content */
+}
+
+.timeline-item .timeline-content h4{
+  font-size: 0.8em;
+  margin-bottom: 0;
+}
+.timeline-item .timeline-content ul {
+  padding-left: 0.8em;
+  list-style: none;
+  font-size: 0.3em;
+}
+.timeline-item .timeline-content p {
+  font-size: 0.8em;
+  line-height: 1.5;
+  font-weight: bold;
+}
+
+
+.hide {
+  visibility: hidden;
+}
+.timeline-item .experience-header {
+  grid-row: 2;
+  text-align: center;
+}
+.experience-icon {
+  margin-left: 40%;
+  width: 20%;
+  height: 40%;
+  z-index: 2;
+  cursor: pointer;
+}
+.timeline-item .experience-icon {
+  grid-row: 3;
+}
+.experience-icon img {
+  width: 100%;
+}
+#experience-content p{
+  font-size: 0.3em;
+}
+.timeline-item #experience-content {
+  grid-row: 4;
+}
+#experience-content h4{
+  text-align: center;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  font-size: 0.8em;
+}
+
+.image-container {
+  width: 100%; /* Adjust based on your layout needs */
+  overflow: hidden; /* Ensures the image zoom does not break layout boundaries */
+}
+
+.image-container img {
+  width: 100%; /* Ensure images fit their containers */
+  transition: transform 0.3s ease; /* Smooth transformation */
+}
+
+.image-container:hover img {
+  transform: scale(1.5); /* Adjust scaling factor as needed */
+}
+.timeline-item .experience-header {
+  grid-row: 2;
+  text-align: center;
+  font-size: 1em;
+  font-style: italic;
+}
+
+
+/* Resume page for desktop */
+@media screen and (min-width: 750px) {
+  .resume-wrapper {
     background-color: #feece7; /* Pink background for the wrapper */
     width: 80%; /* Or any width you prefer */
     margin: 0 auto; /* Center the wrapper */
@@ -588,17 +830,17 @@ footer {
     
   }
   .timeline-content {
-    visibility: hidden; /* Hide content */
-    opacity: 0; /* Make content transparent */
-    height: 0; /* Collapse content area */
-    overflow: hidden; /* Prevent content from taking up space */
-    transition: opacity 0.5s, height 0.5s, visibility 0.5s; /* Animate the visibility and height */
+    visibility: hidden; 
+    opacity: 0; 
+    height: 0; 
+    overflow: hidden; 
+    transition: opacity 0.5s, height 0.5s, visibility 0.5s; 
 }
 
   .timeline-content.active {
-    visibility: visible; /* Show content */
-    opacity: 1; /* Make content opaque */
-    height: auto; /* Expand to fit content */
+    visibility: visible; 
+    opacity: 1; 
+    height: auto; 
 }
 
   .timeline-item .timeline-content h4{
@@ -608,7 +850,7 @@ footer {
   .timeline-item .timeline-content ul {
     padding-left: 1em;
     list-style: none;
-
+    font-size: 1em;
   }
   .timeline-item .timeline-content p {
     font-size: 1.2em;
@@ -629,12 +871,9 @@ footer {
     padding: 5px 0;
     position: absolute;
     z-index: 1;
-    /* bottom: 125%;
-    left: 50%;
-    margin-left: -60px; */
-    top: 50%; /* Position the top of the tooltip to the center of the icon */
-    left: calc(100% + 10px); /* Offset the tooltip to the right of the icon */
-    transform: translateY(-50%); /* Center the tooltip vertically relative to the icon */
+    top: 50%; 
+    left: calc(100% + 10px); 
+    transform: translateY(-50%); 
     margin-left: 0; 
     opacity: 0;
     transition: opacity 0.3s;
@@ -653,7 +892,63 @@ footer {
     visibility: visible;
     opacity: 1;
   }
+  .experience-icon {
+    grid-column: 2/3;
+    grid-row: 1;
+    justify-content: center;
+    width: 40%;
+    height:100%;
+    margin-left: 80%;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    cursor: pointer;
+  }
+  .experience-icon:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s;
+  }
+  .experience-icon .hide::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%; 
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #170327b2 transparent transparent;
+  }
+  .experience-icon:hover .hide {
+    visibility: visible;
+    opacity: 1;
+  }
+  #experience-content p{
+    font-size: 1em;
+  }
+  #experience-content h4{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1.2em;
+  }
 
+  .timeline-item .experience-header {
+    grid-row: 1;
+    grid-column: 3/4;
+    margin-left: 15%;
+    text-align: left;
+    font-size: 1.2em;
+  }
+  .timeline-item .experience-icon {
+    grid-row: 1;
+  }
+  .timeline-item #experience-content {
+    grid-row: 3;
+    grid-column: 3/4;
+  }
+}
 
 
   /* contact page */
