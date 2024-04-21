@@ -516,8 +516,9 @@ footer {
   height: 100%;
   border-radius: 50%;
   border: 3px solid #ffffff; /* White border around the image */
-  /* position: absolute; */
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .profile-card h1 {
   font-size: 1.5em;
