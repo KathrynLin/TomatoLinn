@@ -513,11 +513,11 @@ footer {
 }
 .profile-card img {
   width: 100%;
-  height: fit-content;
+  height: 100%;
   border-radius: 50%;
   border: 3px solid #ffffff; /* White border around the image */
   /* position: absolute; */
-
+  
 }
 .profile-card h1 {
   font-size: 1.5em;
