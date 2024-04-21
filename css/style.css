@@ -739,6 +739,7 @@ footer {
 }
 
 .video-icon video {
+  display: none;
   width: 100px; /* Adjust width as needed */
   height: auto; /* Maintain aspect ratio */
   border: 2px solid #b5d7e1;
@@ -754,6 +755,11 @@ footer {
   justify-content: center; /* Center horizontally in the parent */
   align-items: center; /* Center vertically */
 }
+
+.skill-card .timeline-item {
+  margin-bottom: 1.5em; 
+}
+
 
 /* Resume page for desktop */
 @media screen and (min-width: 750px) {
@@ -793,7 +799,6 @@ footer {
     line-height: 1.5;
     color: #170327b2;
 }
-
 
 /* Timeline Styles */
 .timeline {
@@ -1010,6 +1015,8 @@ footer {
     width: 80%;
     height: 50%;
     z-index: 2;
+    margin-bottom: 0;
+    margin-top: 0;
   }
   
   .timeline-item .timeline-header-2 {
@@ -1047,8 +1054,12 @@ footer {
     z-index: 2;
   }
   .video-icon video {
+    display: block;
     width: 150px;
     cursor: pointer;
+  }
+  .skill-card .timeline-item {
+    margin-bottom: 0; 
   }
 }
 

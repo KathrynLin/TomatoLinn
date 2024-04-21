@@ -35,8 +35,8 @@ document.addEventListener("DOMContentLoaded", function() {
 });
   
 function playVideo() {
-    var video = document.querySelector('.video-icon video');
-    if (video.paused) {
+    var video = document.querySelector('.video-icon video'); 
+    if (video.paused) { 
         video.play();
     } else {
         video.pause();
