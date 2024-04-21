@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sedan:ital@0;1&display=swap" rel="stylesheet">
+    <script src="js/resume.js"></script>
+    <title>Fangqing's Website</title>
+</head>
+
+<body class="projects_body">
+    <header>
+        <a href = "#main-content" class="skip">Skip to Main Content</a>
+        <nav id="navbar">
+            <ul>
+                <li><a href="index.html">ABOUT ME</a></li>
+                <li><a href = "resume.html">RESUME</a></li>
+                <li class="active"><a href = "projects.html">PROJECTS</a></li>
+                <li><a href = "contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <div class="video-header">
+            <video autoplay loop muted class="background-video">
+                <source src="images/home_vedio.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="header-text-box">
+                <h1>My Projects</h1>
+                <p>Explore the projects I've worked on.</p>
+            </div>
+        </div>
+
+        <div class="project-cards-container">
+            <!-- Project Card 1 -->
+            <div class="project-card" onclick="location.href='https://example.com/project1';">
+                <h2>Project Title 1</h2>
+                <p>Project Description</p>
+            </div>
+
+            <!-- Project Card 2 (opens video in a modal) -->
+            <div class="project-card" onclick="openModal('videoModal2');">
+                <h2>Project Title 2</h2>
+                <p>Project Description</p>
+            </div>
+
+            <!-- Add more cards as needed -->
+            <div class="project-card" onclick="openModal('videoModal2');">
+                <h2>Project Title 2</h2>
+                <p>Project Description</p>
+            </div>
+            <div class="project-card" onclick="openModal('videoModal2');">
+                <h2>Project Title 2</h2>
+                <p>Project Description</p>
+            </div>
+        </div>
+
+        <!-- Video Modal -->
+        <div id="videoModal2" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('videoModal2');">&times;</span>
+                <video controls>
+                    <source src="path_to_your_video2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </main>
+    
+        <footer>
+            <p>Fangqing Lin &copy; 2024</p>
+        </footer>
+
+        <script src="js/projects.js"></script>
+    </body>
+</html>

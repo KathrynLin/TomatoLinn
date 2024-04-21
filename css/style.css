@@ -12,7 +12,9 @@ body {
 .resume_body {
     background-color:#e6effb;
 }
-
+.projects_body {
+    background-color: #e6effb;
+}
 @media screen and (min-width: 750px) {
     .index_body {
         background-image: linear-gradient(to right, #b5d7e1 35%, #e6effb 75%);
@@ -43,7 +45,6 @@ a.skip {
 
   nav ul {
     display: grid;
-   
     background-color: #b5d7e1;
     overflow: hidden;
     grid-template-columns: 1fr;
@@ -99,6 +100,45 @@ nav .active a {
     border-radius: 30px;
     font-style: italic;
     color:#dbc9da;
+}
+
+/* jump to top button */
+.top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  max-width: 100px;
+  max-height: 50px;
+  width: 100%;
+  height: 100%;
+  padding: .5px;
+  border-radius: 30px;
+  justify-content: center;
+  background-color: #b5d7e1; /*rgba(12, 86, 69, 0.931);*/
+  color: rgba(12, 86, 69);/* #dbc9da;*/
+  border: 2px solid rgba(12, 86, 69);
+  font-size: 1rem;
+  font-weight: 800;
+  text-align: center;
+  cursor: pointer;
+  z-index: 3;
+  transition: transform 0.1s ease, background-color 0.1s ease, box-shadow 0.1s ease;
+  box-shadow: 3px 3px 6px rgba(12, 86, 69, 0.2);
+}
+.top:hover {
+  background-color: #170327b2;
+  border: none;
+  color:#e6effb;
+}
+.top:active {
+  transform: translateY(4px); 
+  box-shadow: 1px 1px 3px rgba(12, 86, 69, 0.2);
+}
+@media screen and (min-width: 750px) {
+  .top {
+    font-size: 1.2rem;
+    max-width: 150px;
+  }
 }
 
 /* Style for the main content area */
@@ -1120,4 +1160,104 @@ footer {
 
 #contact-form button:hover {
   background-color: #4A5A6B;
+}
+
+
+/* project page */
+.video-header {
+  position: relative;
+  overflow: hidden;
+  height: 25vh; 
+}
+
+.background-video {
+  position: relative;
+  width: 100%; /* Adjust the width as needed */
+  height: auto; /* Maintain the aspect ratio */
+  overflow: hidden;
+  margin-top: 3%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+}
+
+.header-text-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff; /* Text color */
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+  backdrop-filter: blur(5px); /* Optional: Apply a blur effect to the background */
+  max-width: 80%; /* Maximum width of the text box */
+}
+
+
+.project-cards-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  justify-items: center;
+  margin: 20px;
+}
+
+.project-card {
+  grid-column: 1/-1;
+  width: 60%;
+  height: fit-content;
+  margin: 10px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.5); /* Adjust for transparency */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  perspective: 1000px; /* Depth for 3D effect */
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-10px) rotateX(10deg); /* 3D raise effect on hover */
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  /* ... other modal styles ... */
+}
+
+.modal-content {
+  /* ... styles for your modal content ... */
+}
+
+.close {
+  /* ... styles for your close button ... */
+}
+
+/* Project page for desktop */
+@media screen and (min-width: 750px) {
+  .video-header {
+    height: 70vh;
+  }
+  
+  .background-video {
+    top: 20%;
+    width: 100%;
+    height: 80%;
+  }
+  
+  .header-text-box {
+    max-width: 50%;
+    top:20%;
+  }
+  
+  .project-cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .project-card {
+    width: 40%;
+  }
 }
