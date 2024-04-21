@@ -34,3 +34,12 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
   
+function playVideo() {
+    var video = document.querySelector('.video-icon video');
+    if (video.paused) {
+        video.play();
+    } else {
+        video.pause();
+        video.currentTime = 0; // Rewind the video
+    }
+}
