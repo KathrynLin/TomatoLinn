@@ -28,50 +28,92 @@
 
     <main id="main-content">
         <div class="video-header">
-            <video autoplay loop muted class="background-video">
+            <video autoplay loop muted class="background-video" id="bg-video">
                 <source src="images/home_vedio.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <div class="header-text-box">
                 <h1>My Projects</h1>
                 <p>Explore the projects I've worked on.</p>
+                <p class="smalltip">Click on a project card to learn more.</p>
             </div>
+            
         </div>
+        <div class="video-controls">
+            <!-- Example buttons for the controls (add onclick attributes for functionality) -->
+            <button id="play-pause-btn">Play</button>
+            <button id="mute-btn">Mute</button>
+            <button id="skip-back-btn">Skip Back</button>
+            <button id="skip-forward-btn">Skip Forward</button>
+          </div>
 
         <div class="project-cards-container">
             <!-- Project Card 1 -->
-            <div class="project-card" onclick="location.href='https://example.com/project1';">
-                <h2>Project Title 1</h2>
-                <p>Project Description</p>
+            <div class="project-card" onclick="location.href='https://github.com/KathrynLin/AI-based-health-assistant'">
+                <h2>AI Health Assistant</h2>
+                <ul>
+                    <li>Utilizes Flask & MySQL (Full Stack Development)</li>
+                    <li>Features user login/registration</li>
+                    <li>Personalized health assessment & plans through GPT API</li>
+                    <li>Interactive health goal setting</li>
+                    <li>Stylish and user-friendly interface</li>
+                </ul>
+            </div>
+            
+            <div class="project-card" onclick="location.href='https://huggingface.co/spaces/gaoyujia/SI649_Project2'">
+                <h2>Scientific Visualization Project - <span class="smaller-font">Chatbots Behavioral Analysis</span></h2>
+                <ul>
+                    <li>Designed and implemented an interactive data visualization tool to analyze and compare AI and human behavior in strategic games, enhancing user comprehension and engagement.</li>
+                    <li>Demonstrated proficiency with Altair and Panel for visualization, applying advanced technical skills to meet rigorous design and functionality requirements.</li>
+                    <li>Enhanced user interface with interactive elements such as dynamic filtering, hover details, and clickable legends, improving accessibility and interaction.</li>
+                </ul>
             </div>
 
-            <!-- Project Card 2 (opens video in a modal) -->
-            <div class="project-card" onclick="openModal('videoModal2');">
-                <h2>Project Title 2</h2>
-                <p>Project Description</p>
+            <!-- Project Card 2 (opens video in a modal) -->            
+            <div class="project-card" onclick="openVideoModal('dynamicLEDModal');">
+                <h2>Dynamic LED Light Show</h2>
+                <ul>
+                    <li>Engineered custom data structures using object-oriented programming to manage intricate LED configurations, enhancing control over color and brightness.</li>
+                    <li>Developed music synchronization capabilities by parsing audio tracks and aligning LED responses to real-time musical rhythms using Python and the pickle library.</li>
+                    <li>Designed and programmed a variety of LED patterns and sequences, including responsive animations that adapt to music.</li>
+                    <li>Achieved seamless integration of LED hardware with software systems to facilitate real-time interactive light displays, ensuring robust operation and user engagement.</li>
+                </ul>
+            </div>
+            <div id="dynamicLEDModal" class="modal">
+                <div class="modal-content">
+                  <span class="close" onclick="closeVideoModal('dynamicLEDModal');">&times;</span>
+                  <video controls>
+                    <source src="images/diag.mp4" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                  </video>
+                </div>
+              </div>
+            
+            <!-- Project Card 3 (opens video in a modal) -->
+            <div class="project-card" onclick="openVideoModal('modalId');">
+                <h2>Automated Gas Leak Patrol Car</h2>
+                <ul>
+                    <li>Addresses hazards of gas chemical leaks and emergency location issues.</li>
+                    <li>Equipped with multi-type gas sensors for automatic leak source detection and localization.</li>
+                    <li>Can accurately locate leak sources like CO, methane, and VOCs within 200 sqm in under 5 minutes.</li>
+                    <li>Incorporates STM32F103 control board for data processing and algorithm execution.</li>
+                    <li>Features obstacle avoidance and emergency vehicle reset with infrared remote control.</li>
+                    <li>Significant for industrial safety and emergency responses, providing real-world applications.</li>
+                </ul>
+            </div>
+            <div id="modalId" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeVideoModal('modalId');">&times;</span>
+                    <video controls>
+                        <source src="images/prp.mp4" type="video/mp4">
+                        Your browser does not support HTML5 video.
+                    </video>
+                </div>
             </div>
 
-            <!-- Add more cards as needed -->
-            <div class="project-card" onclick="openModal('videoModal2');">
-                <h2>Project Title 2</h2>
-                <p>Project Description</p>
-            </div>
-            <div class="project-card" onclick="openModal('videoModal2');">
-                <h2>Project Title 2</h2>
-                <p>Project Description</p>
-            </div>
         </div>
 
-        <!-- Video Modal -->
-        <div id="videoModal2" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('videoModal2');">&times;</span>
-                <video controls>
-                    <source src="path_to_your_video2.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </div>
+        <a href="#navbar"><button class="top">Jump to Top</button></a>
     </main>
     
         <footer>

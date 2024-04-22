@@ -308,29 +308,38 @@ nav .active a {
 }
 
 
-  .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-  
-  /* Modal Content */
-  .modal-content {
-    background-color: #fefefe;
-    margin: 2% auto; /* Increased top margin, auto margin for horizontal */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 50%; /* Smaller width */
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); /* Optional */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 50%;
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); 
 }
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto; /* Centered in all screen sizes */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 90%; /* Adjust width for mobile */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 3px 6px rgba(0,0,0,0.15); /* Slightly reduced shadow for mobile */
+}
+
+@media screen and (min-width: 750px) {
+  .modal {
+      padding-top: 100px; /* Larger padding for larger screens */
+  }
+  .modal-content {
+      width: 50%; /* Larger fixed width for larger screens */
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2), 0 6px 20px rgba(0,0,0,0.19); /* More pronounced shadow for larger screens */
+  }
+}
+
   
 .cat-slides {
   width: 100%; /* Adjust width as necessary */
@@ -1164,6 +1173,9 @@ footer {
 
 
 /* project page */
+.smaller-font {
+  font-size: smaller;
+}
 .video-header {
   position: relative;
   overflow: hidden;
@@ -1172,15 +1184,60 @@ footer {
 
 .background-video {
   position: relative;
-  width: 100%; /* Adjust the width as needed */
-  height: auto; /* Maintain the aspect ratio */
+  width: 100%; 
+  height: auto; 
   overflow: hidden;
   margin-top: 3%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); 
 }
+.video-controls {
+  position: relative;
+  margin-top: 3%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.video-controls button {
+  padding: 8px 16px; 
+  width: 80%;
+  height: 100%;
+  margin-left: 10%; 
+  text-align: center;
+  background-color: #b5d7e1; 
+  color: #302f30; 
+  border: none; 
+  border-radius: 5%;
+  cursor: pointer;
+  font-size: 1em; 
+  pointer-events: auto; /* Enables clicking on the buttons */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  /* Adding box shadow for 3D effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* x-offset, y-offset, blur-radius, color */
+  transform: translateZ(0);
+}
 
+.video-controls button:hover {
+  background-color: #5e4a66;
+  color: #e8dde8;
+  /* Changes the shadow to give the appearance of being pressed */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  /* Slightly move the button up to reinforce the pressed effect */
+  transform: translateY(-2px);
+}
+.video-controls button:active {
+  /* When the button is clicked, move it further down to simulate a press */
+  transform: translateY(1px);
+  /* Reduce the shadow to give the impression the light source is closer */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
 .header-text-box {
   position: absolute;
   top: 50%;
@@ -1214,7 +1271,9 @@ footer {
   transform: translateZ(60px); /* Pulls the paragraph text towards the viewer */
   opacity: 0.85;
 }
-
+.header-text-box .smalltip {
+  font-size: xx-small;
+}
 .header-text-box:hover h1,
 .header-text-box:hover p {
   transform: translateZ(0); /* Flattens the text on hover for an interactive effect */
@@ -1247,34 +1306,44 @@ footer {
 
 .project-card {
   grid-column: 1/-1;
-  width: 60%;
-  height: fit-content;
+  background-color: #d3c5e66d; /*#feece7; */
+  border: 1px solid #ccc; /* Subtle border */
+  border-radius: 10px; /* Rounded corners */
+  padding: 15px;
   margin: 10px;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.5); /* Adjust for transparency */
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  perspective: 1000px; /* Depth for 3D effect */
-  cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for hover effects */
+  cursor: pointer; /* Indicates the card is clickable */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for 3D effect */
 }
 
 .project-card:hover {
-  transform: translateY(-10px) rotateX(10deg); /* 3D raise effect on hover */
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+  transform: translateY(-10px); /* Moves the card up slightly on hover */
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover for 3D effect */
 }
 
-.modal {
-  display: none; /* Hidden by default */
-  /* ... other modal styles ... */
+.project-card h2 {
+  text-align: center;
+  color: rgb(12, 86, 69); /* Dark green color matching the theme */
+  font-size: 1.5rem; /* Larger font size for the title */
 }
 
-.modal-content {
-  /* ... styles for your modal content ... */
+.project-card ul {
+  list-style: none; 
+  padding: 0;
 }
 
-.close {
-  /* ... styles for your close button ... */
+.project-card li {
+  font-size: 1rem; 
+  color: #3e3143; 
+  padding: 5px 0;
+  margin-left: 5%;
+  list-style-type: circle;
+}
+
+.modal-content video {
+  width: 100%;
+  height: fit-content;
+  border-radius: 10px;
 }
 
 /* Project page for desktop */
@@ -1303,5 +1372,26 @@ footer {
   
   .project-card {
     width: 40%;
+  }
+  .video-controls{
+    justify-items: center;
+    grid-template-columns: auto auto auto auto;
+    gap: 3%;
+    margin-top: 1%;
+  }
+  .video-controls button {
+    grid-row: 1;
+    width: 150px;
+    font-size: 1.2em;
+  }
+
+  .project-card ul {
+    margin-top: 2%;
+  }
+  .project-card li {
+    font-size: 1.3em;
+  }
+  .project-card h2 {
+    font-size: 2em;
   }
 }
