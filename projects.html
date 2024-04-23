@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sedan:ital@0;1&display=swap" rel="stylesheet">
-    <script src="js/resume.js"></script>
     <title>Fangqing's Website</title>
 </head>
 
@@ -26,7 +25,8 @@
         </nav>
     </header>
 
-    <main id="main-content">
+    <main id="main-content" class="main-content">
+        
         <div class="video-header">
             <video autoplay loop muted class="background-video" id="bg-video">
                 <source src="images/home_vedio.mp4" type="video/mp4">
@@ -40,13 +40,13 @@
             
         </div>
         <div class="video-controls">
-            <!-- Example buttons for the controls (add onclick attributes for functionality) -->
+           
             <button id="play-pause-btn">Play</button>
             <button id="mute-btn">Mute</button>
             <button id="skip-back-btn">Skip Back</button>
             <button id="skip-forward-btn">Skip Forward</button>
           </div>
-
+        
         <div class="project-cards-container">
             <!-- Project Card 1 -->
             <div class="project-card" onclick="location.href='https://github.com/KathrynLin/AI-based-health-assistant'">
@@ -112,14 +112,18 @@
             </div>
 
         </div>
+        <div id="particle-container"></div>
 
         <a href="#navbar"><button class="top">Jump to Top</button></a>
     </main>
     
         <footer>
             <p>Fangqing Lin &copy; 2024</p>
+            <div class="video-credits">
+                <p>Header Video Credits: Illustration by Ugo Gattoni. Animation by Xavier Ramonède, Rachid Guendouze, Guillaume Cassuto</p>
+                <p>Source: <a href="https://vimeo.com/144620281" target="_blank">Vimeo</a></p>
+              </div>
         </footer>
-
         <script src="js/projects.js"></script>
     </body>
 </html>

@@ -69,3 +69,50 @@ window.onclick = function(event) {
     }
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const videos = document.querySelectorAll('video');
+        videos.forEach(video => {
+            video.pause();
+            video.currentTime = 0;
+        });
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const container = document.getElementById('particle-container');
+
+    const createParticle = (event) => {
+        // Check if motion reduction mode is disabled before creating particles
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!prefersReducedMotion) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            container.appendChild(particle);
+
+            particle.style.left = `${event.clientX}px`;
+            particle.style.top = `${event.clientY}px`;
+
+            const size = Math.floor(Math.random() * (20 - 5 + 1) + 5);
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+
+            const destinationX = event.clientX + (Math.random() - 0.5) * 2 * 100;
+            const destinationY = event.clientY + (Math.random() - 0.5) * 2 * 100;
+
+            const animation = particle.animate([
+                { transform: `translate(0, 0)`, opacity: 1 },
+                { transform: `translate(${destinationX - event.clientX}px, ${destinationY - event.clientY}px)`, opacity: 0 }
+            ], {
+                duration: Math.random() * 1000 + 1000,
+                easing: 'ease-out'
+            });
+
+            animation.onfinish = () => {
+                particle.remove();
+            };
+        }
+    };
+
+    document.addEventListener('mousemove', createParticle);
+});

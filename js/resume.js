@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
       });
   });
 });
-  
+
 function playVideo() {
     var video = document.querySelector('.video-icon video'); 
     if (video.paused) { 
@@ -43,3 +43,15 @@ function playVideo() {
         video.currentTime = 0; // Rewind the video
     }
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    const videos = document.querySelectorAll('video');
+    videos.forEach(video => {
+        const videoContainer = video.closest('.video-icon');
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            videoContainer.style.display = 'none';
+        } else {
+            videoContainer.style.display = 'flex';
+        }
+    });
+});

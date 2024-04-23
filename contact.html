@@ -21,7 +21,7 @@
 </head>
 <body class="index_body">
     <header>
-        <a href = "#main-content" class="skip">Skip to Main Content</a>
+        <a href = "#main-content-contact" class="skip">Skip to Main Content</a>
         <nav>
             <ul>
                 <li><a href="index.html">ABOUT ME</a></li>
@@ -33,22 +33,33 @@
         
 
     </header>
-    <main id="main-content">
+    <main id="main-content-contact">
     
       <div class="contact-container">
-        <h2>Contact Me</h2>
-        <p>Michigan, US</p>
-        <p>Phone: +1 7345839693</p>
-        <p>Email: tomatolinn@gmail.com</p>
+        <div class="contact-info-box">
+          <h1>Contact Me</h1>
+          <p><span class="bold-info">Location:</span> Michigan, US</p>
+          <p><span class="bold-info">Phone:</span> +1 7345839693</p>
+          <p><span class="bold-info">Email:</span> tomatolinn@gmail.com</p>
+        </div>
         
         <form id="contact-form">
-            <p>Let's get in touch. Send me a message:</p>
-            <input type="text" id="name" name="name" placeholder="Name">
-            <input type="email" id="email" name="email" placeholder="Email">
-            <input type="text" id="subject" name="subject" placeholder="Subject">
-            <textarea id="message" name="message" placeholder="Message"></textarea>
-            <button type="submit">SEND MESSAGE</button>
-        </form>
+          <p>Let's get in touch! Send me a message:</p>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name" required>
+      
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      
+          <label for="subject">Subject:</label>
+          <input type="text" id="subject" name="subject" placeholder="Enter the subject" required>
+      
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
+      
+          <button type="submit">SEND MESSAGE</button>
+      </form>
+      
     </div>
     
 
