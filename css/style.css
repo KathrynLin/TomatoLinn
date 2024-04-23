@@ -441,7 +441,8 @@ nav .active a {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin-left: 40%;
-    height: 70%;
+    height: 75%;
+    min-height: fit-content;
     width:70%;
     text-align: center;
     }
